@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">Loan Application</string>
+    <string name="title_activity_dashboard">DashboardActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+
+
+    <string name="menu__request_loan">Request Loan</string>
+    <string name="menu_pay_loan">Pay Loan</string>
+    <string name="menu_history">Loan History</string>
+    <string name="menu_calculator">Loan Calculator</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_logout">Logout</string>
+
+    <string name="loan_amount_view">Loan Amount(Tshs): </string>
+    <string name="loan_amount_txt">Amount</string>
+    <string name="interest_rate_view">Interest rate(%) : </string>
+    <string name="interest_rate_txt">Rate</string>
+    <string name="period_view">Months : </string>
+    <string name="period_txt">Months</string>
+    <string name="btn_calculate">Calculate Payments</string>
+    <string name="monthly_result_view">Monthly Payments(Tshs): </string>
+    <string name="view_monthly"> </string>
+    <string name="total_result_view">Total Payments(Tshs): </string>
+    <string name="view_total"> </string>
+
+    <!-- Request loan-->
+    <string name="btn_request_loan">submit</string>
+    <string name="txt_loan_amount">Enter amount</string>
+    <string name="txt_period">Enter period(Months)</string>
+</resources>

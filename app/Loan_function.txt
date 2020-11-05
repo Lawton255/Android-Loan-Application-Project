@@ -1,0 +1,67 @@
+branch(branch_name, branch_city, assets)
+customer(customer_id, customer_name, customer_street)
+loan(loan_number, branch_name, amount)
+borrower(customer_id, loan_number)
+account(account_number, branch_name, balance)
+depositor(customer_id, account_number)
+
+create table customer
+(customer_id	char(10),
+customer_name	char(30),
+customer_address	char(50),
+primary key (customer_id)) ;
+
+create table branch
+(branch_name	char(15),
+branch_city	char(30),
+assets	integer,
+primary key (branch_name),
+check (assets >= 0)) ;
+
+create table account
+(account_number	char(10),
+branch_name	char(15),
+balance	integer,
+primary key (account_number),
+check (balance >= 0)) ;
+
+create table depositor
+(customer_id	char(10),
+account_number	char(10),
+primary key (customer_id, account_number)) ;
+
+
+
+Loan Remainder payment
+
+App icon
+
+StartDate
+EndDate
+
+Request Loan
+if (balance != 0.0){
+you cannot request for the loan until you pay the due amount} else{request loan}
+
+Payment: PayAmount - Balance
+if (balance <=0){You have no any loan to pay} else{Payment function: PayAMount - Due Balance}
+
+Logout Function with Firebase
+FirebaseAuth.getInstance().signout();
+sratActivity(new Intent(getApplicationContext(), Login.class);
+finish();
+
+
+
+Description
+The project perform the following functionalities:-
+1. User login and registration using Firebase database Authentication
+2. Loan calculator: Customer and or a lender will calculate his or her loan amount against interest and period to get the monthly loan return and total return
+3. Request Loan: Customer will request for the loan.by entering loan amount and loan period and then submit
+4. Pay Loan: Customer will pay for the loan.
+5. History: Customer will view his or her Loan or Transaction history
+
+Technology used:
+1. Android (Java)
+2. Firebase Database (For data storage)
+

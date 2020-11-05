@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_request_loan"
+            android:icon="@drawable/ic_apply_loan"
+            android:title="@string/menu__request_loan" />
+
+        <item
+            android:id="@+id/nav_pay_loan"
+            android:icon="@drawable/ic_pay_loan"
+            android:title="@string/menu_pay_loan" />
+
+        <item
+            android:id="@+id/nav_history"
+            android:icon="@drawable/ic_history"
+            android:title="@string/menu_history" />
+
+        <item
+            android:id="@+id/nav_calculator"
+            android:icon="@drawable/ic_calc"
+            android:title="@string/menu_calculator" />
+
+    </group>
+</menu>
