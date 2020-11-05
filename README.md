@@ -12,4 +12,4 @@ Technology used:
 1. Android (Java)
 2. Firebase Database (For data storage)
 
-NB: The app will run in Android version4.1 and above
+NB: The app will run on Android version4.1 and above
