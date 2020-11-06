@@ -22,6 +22,7 @@
     <string name="period_view">Months : </string>
     <string name="period_txt">Months</string>
     <string name="btn_calculate">Calculate Payments</string>
+    <string name="btn_logout">Logout</string>
     <string name="monthly_result_view">Monthly Payments(Tshs): </string>
     <string name="view_monthly"> </string>
     <string name="total_result_view">Total Payments(Tshs): </string>
@@ -31,4 +32,8 @@
     <string name="btn_request_loan">submit</string>
     <string name="txt_loan_amount">Enter amount</string>
     <string name="txt_period">Enter period(Months)</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>

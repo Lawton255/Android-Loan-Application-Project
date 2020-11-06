@@ -5,9 +5,10 @@ borrower(customer_id, loan_number)
 account(account_number, branch_name, balance)
 depositor(customer_id, account_number)
 
-create table customer
+create table customer *****
 (customer_id	char(10),
 customer_name	char(30),
+customer_phone char(30),
 customer_address	char(50),
 primary key (customer_id)) ;
 
@@ -30,6 +31,30 @@ create table depositor
 account_number	char(10),
 primary key (customer_id, account_number)) ;
 
+create table customer *****
+(customer_id	char(10),
+customer_name	char(30),
+customer_phone char(30),
+customer_email char(30),
+customer_address	char(50),
+primary key (customer_id, customer_email)) ;
+
+loan_table ********
+(loan_id char(10),
+customer_email char(10),
+loan_amount char(30),
+loan_startdate varchar(50),
+loan_enddate varchar(50),
+primary key (loan_id, customer_email)
+);
+
+Payment table ***********
+(pay_id char(10),
+customer_email char(10),
+paid_amount char(30),
+paid_date varchar(50),
+primary key (pay_id, customer_email)
+);
 
 
 Loan Remainder payment
@@ -64,4 +89,22 @@ The project perform the following functionalities:-
 Technology used:
 1. Android (Java)
 2. Firebase Database (For data storage)
+
+Access user information from Firebase
+
+FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+if (user != null) {
+    // Name, email address, and profile photo Url
+    String name = user.getDisplayName();
+    String email = user.getEmail();
+    Uri photoUrl = user.getPhotoUrl();
+
+    // Check if user's email is verified
+    boolean emailVerified = user.isEmailVerified();
+
+    // The user's ID, unique to the Firebase project. Do NOT use this value to
+    // authenticate with your backend server, if you have one. Use
+    // FirebaseUser.getIdToken() instead.
+    String uid = user.getUid();
+}
 
