@@ -67,31 +67,23 @@ public class RegistrationActivity extends AppCompatActivity {
                 String password = mEdtPassword.getText().toString().trim();
 
 
-                if (TextUtils.isEmpty(fullName)){
-                    mEdtEmail.setError("Enter Full name.");
-                    return;
-                }
-                if (TextUtils.isEmpty(email)){
+                if (fullName.isEmpty()){
+                    mEdtSname.setError("Enter Full name.");
+                } else if (email.isEmpty()){
                     mEdtEmail.setError("Email is required.");
-                    return;
-                }
-                if (phone.length() < 10){
-                    mEdtEmail.setError("Phone number must be greater than 10 numbers");
-                    return;
-                }
-                if (password.length() < 6){
-                    mEdtEmail.setError("Password must be >= to 6 characters");
-                    return;
-                }
+                }else if (phone.length() < 10){
+                    mEdtPhone.setError("Phone number must be greater than 10 numbers");
+                } else if (password.length() < 6){
+                    mEdtPassword.setError("Password must be >= to 6 characters");
+                } else {
 
-
-                   progressBar.setVisibility(View.VISIBLE);
+                    progressBar.setVisibility(View.VISIBLE);
 
                     // register the user in firebase
-                    fAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    fAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()){
+                            if (task.isSuccessful()) {
                                 Toast.makeText(RegistrationActivity.this, "User successful created.", Toast.LENGTH_SHORT).show();
                                 userID = fAuth.getCurrentUser().getUid(); // call the userID from stored data
                                 DocumentReference documentReference = fStore.collection("users").document(userID);
@@ -106,13 +98,13 @@ public class RegistrationActivity extends AppCompatActivity {
                                     }
                                 });
                                 startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
-                            }else {
+                            } else {
                                 Toast.makeText(RegistrationActivity.this, "Error occured !" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             }
 
                         }
                     });
-
+                }
             }
         });
 

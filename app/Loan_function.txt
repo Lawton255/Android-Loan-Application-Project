@@ -86,6 +86,17 @@ The project perform the following functionalities:-
 4. Pay Loan: Customer will pay for the loan.
 5. History: Customer will view his or her Loan or Transaction history
 
+PRESENTATION COMMENTS
+- Integrate payment gateways
+- Check if Lender has taken loan from another company / API(LOAN QUALIFICATION)
+- Integrate with TRA
+- NIDA number verification
+- Beatiful UI/UX
+- Register through phone no and send OTP verification
+- Social network signin & signup
+
+Loan type(Personal  Loan  / Business loan)
+
 Technology used:
 1. Android (Java)
 2. Firebase Database (For data storage)
