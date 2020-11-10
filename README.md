@@ -7,6 +7,7 @@ The project perform the following functionalities:-
 3. Request Loan: Customer will request for the loan.by entering loan amount and loan period and then submit
 4. Pay Loan: Customer will pay for the loan.
 5. History: Customer will view his or her Loan or Transaction history
+6. User Profile
 
 Technology used:
 1. Android (Java)
