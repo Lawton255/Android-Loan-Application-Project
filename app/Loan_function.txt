@@ -64,6 +64,7 @@ App icon
 StartDate
 EndDate
 
+//Firebase Firestore (Send & Fetch data from firebase firestore
 Request Loan
 if (balance != 0.0){
 you cannot request for the loan until you pay the due amount} else{request loan}

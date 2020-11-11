@@ -31,6 +31,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
+
 public class ProfileActivity extends AppCompatActivity {
     TextView fullname, email, phone;
     Button mBtnLogout, mBtnChangePassword, mBtnUpdateProfile;
@@ -52,8 +53,8 @@ public class ProfileActivity extends AppCompatActivity {
         phone = findViewById(R.id.profile_phone);
         mBtnLogout = findViewById(R.id.btn_logout);
         mBtnChangePassword = findViewById(R.id.btn_change_password);
-        profileImage = findViewById(R.id.profileImage);
-        mBtnUpdateProfile = findViewById(R.id.btn_update_profile);
+        profileImage = findViewById(R.id.profileImageView);
+        mBtnUpdateProfile = findViewById(R.id.btn_update_profile_image);
 
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
@@ -118,7 +119,6 @@ public class ProfileActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //Open / Access Gallery
                 Intent openGalleryIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                //openGalleryIntent.setType("image/*");
                 startActivityForResult(openGalleryIntent, 1000);
             }
         });
