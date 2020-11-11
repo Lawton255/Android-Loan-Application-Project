@@ -5,12 +5,16 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,7 +30,8 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 
 public class ProfileActivity extends AppCompatActivity {
     TextView fullname, email, phone;
-    Button mBtnLogout, mBtnChangePassword;
+    Button mBtnLogout, mBtnChangePassword, mBtnUpdateProfile;
+    ImageView profileImage;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     FirebaseUser user;
@@ -43,6 +48,8 @@ public class ProfileActivity extends AppCompatActivity {
         phone = findViewById(R.id.profile_phone);
         mBtnLogout = findViewById(R.id.btn_logout);
         mBtnChangePassword = findViewById(R.id.btn_change_password);
+        profileImage = findViewById(R.id.profileImage);
+        mBtnUpdateProfile = findViewById(R.id.btn_update_profile);
 
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
@@ -69,7 +76,7 @@ public class ProfileActivity extends AppCompatActivity {
 
                 final AlertDialog.Builder passwordResetDialog = new AlertDialog.Builder(v.getContext());
                 passwordResetDialog.setTitle("Change Password ?");
-                passwordResetDialog.setMessage("Enter new password > Characters long. ");
+                passwordResetDialog.setMessage("Enter new password > 6 Characters long. ");
                 passwordResetDialog.setView(resetPassword);
 
                 passwordResetDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
@@ -101,6 +108,25 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
+        mBtnUpdateProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Open / Access Gallery
+                Intent openGalleryIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(openGalleryIntent, 1000);
+            }
+        });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1000){
+            if (requestCode == Activity.RESULT_OK){
+                Uri imageUri = data.getData();
+                profileImage.setImageURI(imageUri);
+            }
+        }
     }
 
     public void logout(View view) {
